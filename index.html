@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de Lectura #3 - Daniel Tijerino</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rugrat-purple: #9b59b6;
+            --rugrat-orange: #e67e22;
+            --rugrat-lime: #a2de26;
+            --rugrat-teal: #1abc9c;
+            --rugrat-yellow: #f1c40f;
+            --bg-pattern: #ecf0f1;
+        }
+
+        body {
+            font-family: 'Comic Neue', cursive, sans-serif;
+            background-color: var(--bg-pattern);
+            background-image: 
+                radial-gradient(circle at 15% 15%, var(--rugrat-lime) 5%, transparent 6%),
+                radial-gradient(circle at 85% 85%, var(--rugrat-purple) 5%, transparent 6%),
+                radial-gradient(circle at 50% 50%, var(--rugrat-teal) 2%, transparent 3%);
+            background-size: 60px 60px;
+            margin: 0;
+            padding: 40px 20px;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        /* --- ESTILOS DE LA PORTADA --- */
+        .cover-container {
+            max-width: 850px;
+            margin: 0 auto 60px auto;
+            background-color: #fff;
+            padding: 40px;
+            text-align: center;
+            border: 6px dashed var(--rugrat-lime);
+            border-radius: 40px 10px 40px 10px;
+            box-shadow: 15px 15px 0px var(--rugrat-purple);
+            transform: rotate(-1deg);
+            position: relative;
+        }
+
+        /* --- NUEVO: Contenedor Horizontal para el Encabezado --- */
+        .cover-header-horizontal {
+            display: flex;
+            align-items: center; /* Centra verticalmente logo y texto */
+            justify-content: center; /* Centra el conjunto horizontalmente */
+            gap: 20px; /* Espacio entre logo y texto */
+            margin-bottom: 30px;
+            flex-wrap: wrap; /* Se adapta si la pantalla es muy pequeña */
+        }
+
+        /* LOGO AJUSTADO PARA HORIZONTAL */
+        .cover-logo {
+            max-width: 130px; /* Un poco más pequeño para que quepa al lado del texto */
+            height: auto;
+            display: block;
+            border-radius: 10px;
+            /* Sombra sutil para que resalte */
+            filter: drop-shadow(3px 3px 0px rgba(0,0,0,0.1));
+        }
+
+        /* NOMBRE UNI AJUSTADO PARA HORIZONTAL */
+        .cover-uni-name {
+            font-family: 'Bangers', cursive;
+            font-size: 2.5rem;
+            color: var(--rugrat-purple);
+            text-transform: uppercase;
+            margin: 0; /* Quitamos márgenes extra */
+            text-shadow: 2px 2px 0px var(--rugrat-yellow);
+            line-height: 1.1;
+            text-align: left; /* Alineado a la izquierda, junto al logo */
+        }
+
+        /* --- Resto de estilos de la portada --- */
+        .cover-details-box {
+            background-color: #fff5e6;
+            border: 3px dotted var(--rugrat-orange);
+            padding: 30px;
+            border-radius: 20px;
+            display: inline-block;
+            width: 90%;
+            position: relative;
+            z-index: 10;
+        }
+
+        .cover-degree {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #444;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--rugrat-lime);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .cover-course {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #000;
+            margin: 10px 0;
+        }
+
+        .highlight-data {
+            color: var(--rugrat-teal);
+            font-family: 'Bangers', cursive;
+            font-size: 2.2rem; 
+            text-transform: uppercase;
+            margin: 20px 0;
+            text-shadow: 1px 1px 0 #000;
+            background: #fff;
+            display: inline-block;
+            padding: 5px 15px;
+            border: 2px dashed var(--rugrat-purple);
+            transform: rotate(-2deg);
+        }
+
+        .cover-info-block {
+            margin-top: 25px;
+            font-size: 1.3rem;
+            color: #333;
+            text-align: left;
+            display: inline-block;
+        }
+        
+        .cover-label {
+            color: var(--rugrat-purple);
+            font-weight: bold;
+            font-family: 'Bangers', cursive;
+            letter-spacing: 1px;
+        }
+
+        .info-row {
+            margin-bottom: 8px;
+        }
+
+        /* --- ESTILOS DEL CONTENIDO --- */
+        .main-content-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 40px;
+            border: 4px solid #000;
+            border-radius: 20px 5px 30px 15px;
+            box-shadow: 10px 10px 0px var(--rugrat-purple);
+        }
+
+        h1.main-title {
+            font-family: 'Bangers', cursive;
+            font-size: 3rem;
+            color: var(--rugrat-purple);
+            text-align: center;
+            text-transform: uppercase;
+            text-shadow: 3px 3px 0px var(--rugrat-lime);
+            margin-bottom: 40px;
+            transform: rotate(-1deg);
+        }
+
+        .intro-box {
+            background-color: #e8f8f5;
+            border: 3px dashed var(--rugrat-teal);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 50px;
+        }
+
+        h2.section-title {
+            font-family: 'Bangers', cursive;
+            font-size: 2rem;
+            color: #333;
+            border-bottom: 5px solid var(--rugrat-orange);
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .idea-card {
+            background: #fff;
+            border: 3px solid #000;
+            margin-bottom: 40px;
+            padding: 25px;
+            transition: all 0.2s ease;
+        }
+
+        .idea-card:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 6px 6px 0px rgba(0,0,0,0.2);
+        }
+
+        .idea-title {
+            font-family: 'Bangers', cursive;
+            font-size: 1.5rem;
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px dashed #ccc;
+        }
+
+        .card-1 { border-color: var(--rugrat-purple); box-shadow: 8px 8px 0px var(--rugrat-lime); border-radius: 20px 0 20px 0; }
+        .card-1 .idea-title { color: var(--rugrat-purple); }
+
+        .card-2 { border-color: var(--rugrat-orange); box-shadow: 8px 8px 0px var(--rugrat-teal); border-radius: 0 20px 0 20px; }
+        .card-2 .idea-title { color: #d35400; }
+
+        .card-3 { border-color: var(--rugrat-teal); box-shadow: 8px 8px 0px var(--rugrat-yellow); border-radius: 15px; }
+        .card-3 .idea-title { color: var(--rugrat-teal); }
+
+        strong { background-color: rgba(255, 255, 0, 0.4); padding: 0 3px; border-radius: 3px; }
+    </style>
+</head>
+<body>
+
+    <div class="cover-container">
+        
+        <div class="cover-header-horizontal">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ15IADZfze3he6DvLOvQihBqoRE9Wy3HeVVQ&s" alt="Universidad Castro Carazo Logo" class="cover-logo">
+            <h1 class="cover-uni-name">Universidad Castro Carazo</h1>
+        </div>
+
+        <div class="cover-details-box">
+            <p class="cover-degree">Licenciatura en Ciencias de la Educación con énfasis en Docencia</p>
+            
+            <p class="cover-course">Curso: LD5013 Introducción a la Pedagogía</p>
+            
+            <div class="highlight-data">Ficha de lectura #3</div>
+            
+            <div class="cover-info-block">
+                <div class="info-row">
+                    <span class="cover-label">Elaborado por:</span><br> 
+                    Daniel Tijerino Cerón
+                </div>
+                <div class="info-row" style="margin-top: 15px;">
+                    <span class="cover-label">Profesor(a):</span><br> 
+                    Carmen Amelia Ulate Quesada
+                </div>
+            </div>
+
+            <p style="margin-top: 25px; font-size: 1.2rem; color: #666; font-weight: bold;">
+                Sede Central | I Cuatrimestre
+            </p>
+            
+            <p style="font-family: 'Bangers', cursive; font-size: 1.8rem; color: var(--rugrat-orange); margin-top: 10px;">
+                Febrero 6, 2026
+            </p>
+        </div>
+    </div>
+
+
+    <div class="main-content-container">
+        <h1 class="main-title">Análisis Crítico: Biopedagogía</h1>
+
+        <div class="intro-box">
+            <h3 style="font-family: 'Bangers', cursive; margin-top: 0; font-size: 1.5rem;">Introducción</h3>
+            <p>
+                El análisis de esta semana se centra en la "Pedagogía para la Vida" o Biopedagogía, una propuesta que representa una ruptura epistemológica radical con el modelo educativo tradicional. En lugar de concebir la educación como una transferencia lineal de información —como quien llena un recipiente—, este texto se fundamenta en las teorías de la complejidad y la autopoiesis (Varela y Maturana) para redefinir el aprendizaje. Aquí no hablamos de memorizar, sino de un <strong>proceso biológico de autoorganización y transformación interna</strong>.
+            </p>
+            <p>
+                Las ideas fuerza que presento a continuación no son simples resúmenes; son interpretaciones críticas que exponen cómo este modelo busca desmantelar las estructuras patriarcales y de masificación. El objetivo es claro: demostrar que la verdadera autonomía cognitiva y la supervivencia social dependen de nuestra capacidad para integrar la lógica de la vida en la práctica educativa.
+            </p>
+        </div>
+
+        <h2 class="section-title">Ideas Fuerza Estructurales</h2>
+
+        <div class="idea-card card-1">
+            <h3 class="idea-title">1. El aprendizaje es un proceso de "Autopoiesis", no de transmisión de datos</h3>
+            <p>
+                Desde una perspectiva sistémica, es un error conceptual creer que el docente puede "transferir" conocimiento al estudiante. La lectura es tajante: el ser vivo es un sistema cerrado que se auto-produce. Por lo tanto, aprender no es recibir información de fuera, sino una <strong>reorganización interna provocada por el entorno</strong>. La función del educador, entonces, deja de ser la de "enseñar" contenidos para pasar a diseñar el entorno —la mediación— que obligue al organismo (el estudiante) a reestructurarse a sí mismo para mantener su equilibrio. Si no hay una transformación interna del "ser", simplemente no hubo aprendizaje, solo almacenamiento temporal de datos.
+            </p>
+        </div>
+
+        <div class="idea-card card-2">
+            <h3 class="idea-title">2. La "masificación educativa" actúa como mecanismo de invisibilización contextual y de género</h3>
+            <p>
+                El sistema educativo tradicional opera bajo una lógica industrial que ignora el contexto, lo cual es técnicamente ineficiente y éticamente opresivo. Al imponer un currículo estandarizado desde el aparato estatal, se termina anulando la identidad del sujeto. Esto se vuelve crítico al analizar la educación de la mujer, donde el sistema ha funcionado históricamente para programarlas como "seres para otros" —enfocadas en la receptividad y el cuidado ajeno—, bloqueando su desarrollo como <strong>"seres para sí mismas"</strong>. Una verdadera pedagogía para la vida tiene que ser disruptiva: debe romper esa inercia patriarcal y democratizar el proceso consultando las necesidades reales del contexto, en lugar de imponerlas burocráticamente.
+            </p>
+        </div>
+
+        <div class="idea-card card-3">
+            <h3 class="idea-title">3. La "Ética del Cuidado" y el Diálogo son herramientas de reestructuración, no moralina suave</h3>
+            <p>
+                A menudo se subestima el "diálogo" y el "cuidado" tratándolos como conceptos blandos o románticos, pero el texto los plantea como <strong>herramientas de alta complejidad necesarias para la supervivencia del sistema</strong>. La moral tradicional es un sistema cerrado y rígido; en cambio, la ética del cuidado es abierta y adaptable, garantizando la sostenibilidad de la "morada humana". El diálogo aquí no es conversar por conversar; es un mecanismo técnico para "hackear" y flexibilizar los modelos mentales rígidos que generan conflicto. Sin la capacidad real de modificar nuestros comportamientos a través de la comprensión del "otro", el sistema social colapsa. El cuidado es, por tanto, la lógica operativa que permite la convivencia en medio de la incertidumbre.
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>
